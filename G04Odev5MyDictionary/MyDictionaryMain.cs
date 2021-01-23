@@ -6,8 +6,14 @@ namespace G04Odev5MyDictionary
     {
         static void Main(string[] args)
         {
+            MyDictionary_GRUD<string, int> gamersAndKeys = new MyDictionary_GRUD<string, int>();
 
-            Console.WriteLine("Hello World!");
+            gamersAndKeys.Add("Cafer", 4);
+            gamersAndKeys.Add("Gökmen", 6);
+            gamersAndKeys.Add("Zeynep", 5);
+            gamersAndKeys.Add("Betül", 4);
+
+            gamersAndKeys.Print();
         }
     }
 }
