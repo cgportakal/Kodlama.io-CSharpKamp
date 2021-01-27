@@ -6,12 +6,12 @@ namespace G04Odev5MyDictionary
     {
         static void Main(string[] args)
         {
-            MyDictionary_GRUD<string, int> gamersAndKeys = new MyDictionary_GRUD<string, int>();
+            MyDictionary_GRUD<int, string> gamersAndKeys = new MyDictionary_GRUD<int, string>();
 
-            gamersAndKeys.Add("Cafer", 4);
-            gamersAndKeys.Add("Gökmen", 6);
-            gamersAndKeys.Add("Zeynep", 5);
-            gamersAndKeys.Add("Betül", 4);
+            gamersAndKeys.Add(4, "Cafer");
+            gamersAndKeys.Add(6, "Gökmen");
+            gamersAndKeys.Add(5, "Zeynep");
+            gamersAndKeys.Add(8, "Betül");
 
             gamersAndKeys.Print();
         }

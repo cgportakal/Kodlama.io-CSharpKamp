@@ -4,21 +4,21 @@ using System.Text;
 
 namespace G04Odev5MyDictionary
 {
-    class MyDictionary_GRUD<T_k, T_v>
+    class MyDictionary_GRUD<T_key, T_value>
     {
-        T_k[] _key;
-        T_v[] _value;
-        T_k[] _tempkey;
-        T_v[] _tempvalue;
+        T_key[] _key;
+        T_value[] _value;
+        T_key[] _tempkey;
+        T_value[] _tempvalue;
         public MyDictionary_GRUD()
         {
-            _key = new T_k[0];
-            _value = new T_v[0];
+            _key = new T_key[0];
+            _value = new T_value[0];
         }
-        public void Add(T_k item, T_v item1)
+        public void Add(T_key item, T_value item1)
         {
             _tempkey = _key;
-            _key = new T_k[_key.Length + 1];
+            _key = new T_key[_key.Length + 1];
             for (int i = 0; i < _tempkey.Length; i++)
             {
                 _key[i] = _tempkey[i];
@@ -26,7 +26,7 @@ namespace G04Odev5MyDictionary
             _key[_key.Length - 1] = item;
 
             _tempvalue = _value;
-            _value = new T_v[_value.Length + 1];
+            _value = new T_value[_value.Length + 1];
             for (int i = 0; i < _tempvalue.Length; i++)
             {
                 _value[i] = _tempvalue[i];
