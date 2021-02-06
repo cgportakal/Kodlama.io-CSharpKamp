@@ -14,17 +14,36 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //2021.02.03 tarihindeki kodlar
+            // ProductTest();
+
+            //2021.02.06 tarihindeki kodlar
+            //CategoryTest();
+            ProductTest();
+        }
+
+        private static void CategoryTest()
+        {
+            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+            foreach (var category in categoryManager.GetAll())
+            {
+                Console.WriteLine(category.CategoryName);
+            }
+        }
+
+        private static void ProductTest()
+        {
             //Önceki derslerdeki durum. Sadece burayı değiştirerek EntityFramework sistemine geçtik
             //ProductManager productManager = new ProductManager(new InMemoryProductDal());
             //foreach (var product in productManager.GetAll())
             //{
             //    Console.WriteLine(product.ProductName);
             //}
-            //2021.01.03 tarihindeki kodlar
+
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var product in productManager.GetByUnitPrice(40,100))
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName + "/" + product.CategoryName);
             }
         }
     }
